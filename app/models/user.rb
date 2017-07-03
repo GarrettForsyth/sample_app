@@ -11,4 +11,11 @@ class User < ApplicationRecord
   # -an authenticate method that returns when the user password is correct
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  # Returns a hash digest of the given string
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST:
+                                                  Bcrypt:: Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 end
