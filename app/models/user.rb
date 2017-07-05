@@ -12,7 +12,7 @@ class User < ApplicationRecord
   # -pair of virtual attr. (password and password_confirmation)
   # -an authenticate method that returns when the user password is correct
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   # Returns a hash digest of the given string
   def User.digest(string)
