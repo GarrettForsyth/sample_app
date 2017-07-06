@@ -29,4 +29,27 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     get users_path
     assert_select 'a', text: 'delete', count: 0
   end
+
+  test "should not show non-activated users" do
+    @non_admin.update_attribute(:activated, false)
+
+    log_in_as(@admin)
+    get users_path
+
+    users = assigns(:users)
+    users.each do |user|
+      assert user.activated?
+    end
+  end
+
+  test "should not be able to view non-active users profile" do
+    @non_admin.update_attribute(:activated, false)
+    
+    log_in_as(@admin)
+    get user_path(@non_admin)
+
+    follow_redirect!
+    assert_template "/"
+  end
+
 end
