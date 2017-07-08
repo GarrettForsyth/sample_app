@@ -22,3 +22,10 @@
 
 # Ignore Spring files.
 /spring/*.pid
+
+# Ignore uploaded test images.
+/public/uploads
+
+# Ignore vim's temporary files
+.*.swp
+.*.swo
