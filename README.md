@@ -7,15 +7,15 @@ by [Michael Hartl](http://www.michaelhartl.com/).
 
 ## A More Sophisticated Blogging App
 
-To view the finished app, check [here](https://peaceful-mountain-44540.herokuapp.com/)
+To view the finished app, check [here](https://peaceful-mountain-44540.herokuapp.com/).
 
-This app reinforces the concepts covered in the [previous tutorai](https://github.com/GarrettForsyth/rails_tutorial/tree/master/blogger) and in addition includes:
+This app reinforces the concepts covered in the [previous tutorial](https://github.com/GarrettForsyth/rails_tutorial/tree/master/blogger) and in addition includes:
   - user sign up
   - user login
   - updates/deletes to users (admin actions)
   - account activation, including verification emails
   - password reset
-  - micropost with images
+  - microposts with images
   - the ability to follow users
   - a status feed
 
